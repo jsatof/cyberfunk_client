@@ -3,3 +3,6 @@
 
 # game/.import
 game/.import/
+
+# compiled c objects
+src/*.os
