@@ -1,0 +1,5 @@
+# scons build db
+.sconsign.dblite
+
+# game/.import
+game/.import/
