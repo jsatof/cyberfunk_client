@@ -21,10 +21,32 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="."]
-margin_left = 309.0
-margin_top = 319.0
-margin_right = 779.0
-margin_bottom = 466.0
+margin_left = 268.0
+margin_top = 112.0
+margin_right = 738.0
+margin_bottom = 259.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button2" type="Button" parent="."]
+margin_left = 315.009
+margin_top = 366.665
+margin_right = 696.009
+margin_bottom = 572.665
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="."]
+margin_left = 398.335
+margin_top = 408.018
+margin_right = 615.335
+margin_bottom = 548.018
+text = "clickme too
+"
+align = 1
+valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
