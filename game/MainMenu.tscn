@@ -1,53 +1,82 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://HelloButton.gd" type="Script" id=1]
+
+[sub_resource type="ImageTexture" id=1]
+
+[sub_resource type="ImageTexture" id=2]
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_left = -1.35492
+margin_top = 0.887726
+margin_right = -1.35504
+margin_bottom = 0.887695
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Button" type="Button" parent="."]
-margin_left = 307.704
-margin_top = 99.6697
-margin_right = 692.704
-margin_bottom = 274.67
-text = "clickme"
+margin_left = 639.948
+margin_top = 1.50674
+margin_right = 1024.95
+margin_bottom = 176.507
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Label" type="Label" parent="."]
-margin_left = 268.0
-margin_top = 112.0
-margin_right = 738.0
-margin_bottom = 259.0
+margin_left = 645.132
+margin_top = 8.17382
+margin_right = 1025.13
+margin_bottom = 167.174
+text = "Start Game"
+align = 1
+valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Button2" type="Button" parent="."]
-margin_left = 315.009
-margin_top = 366.665
-margin_right = 696.009
-margin_bottom = 572.665
+margin_left = 641.589
+margin_top = 393.093
+margin_right = 1022.59
+margin_bottom = 599.093
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Label2" type="Label" parent="."]
-margin_left = 398.335
-margin_top = 408.018
-margin_right = 615.335
-margin_bottom = 548.018
-text = "clickme too
-"
+margin_left = 730.579
+margin_top = 425.008
+margin_right = 947.579
+margin_bottom = 565.008
+text = "Quit Game"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Menu Icon" type="Sprite" parent="."]
+position = Vector2( 85.0239, 128.11 )
+scale = Vector2( 387.997, 271.206 )
+texture = SubResource( 1 )
+normal_map = SubResource( 2 )
+
+[node name="Label3" type="Label" parent="."]
+margin_left = 171.212
+margin_top = 197.455
+margin_right = 457.212
+margin_bottom = 341.455
+size_flags_vertical = 1
+text = "Menu Icon Goes Here"
 align = 1
 valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_Button2_pressed"]
