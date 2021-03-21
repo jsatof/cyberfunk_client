@@ -2,7 +2,8 @@ extends Control
 
 func _on_FrontRect_gui_input(event):
 	if event is InputEventMouseButton:
-		print("clicked")
+		var root_node = get_parent().get_parent()
+		root_node.get_node("LoginForm").visible = true
 
 # TODO: Something with changing color to look clickable
 func _on_FrontRect_mouse_exited():
