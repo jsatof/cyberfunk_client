@@ -1,0 +1,217 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Music - 35889.webm" type="VideoStream" id=1]
+[ext_resource path="res://VideoPlayer.gd" type="Script" id=2]
+[ext_resource path="res://icon.png" type="Texture" id=3]
+[ext_resource path="res://LoginPanel.gd" type="Script" id=4]
+[ext_resource path="res://LoginForm.gd" type="Script" id=5]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="AvatarRect" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VideoPlayer" type="VideoPlayer" parent="AvatarRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+stream = ExtResource( 1 )
+autoplay = true
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LoginPanels" type="Control" parent="AvatarRect"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -435.261
+margin_top = -146.034
+margin_right = -1.26135
+margin_bottom = -13.0339
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BackRect" type="ColorRect" parent="AvatarRect/LoginPanels"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -427.186
+margin_top = -107.523
+margin_right = -2.18579
+margin_bottom = -4.52316
+color = Color( 0.8, 0.141176, 0.792157, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FrontRect" type="ColorRect" parent="AvatarRect/LoginPanels"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -433.913
+margin_top = -100.796
+margin_right = -8.9129
+margin_bottom = 2.20404
+color = Color( 0.270588, 0.807843, 0.619608, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AvatarTexture" type="TextureRect" parent="AvatarRect/LoginPanels/FrontRect"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -182.897
+margin_top = -24.1055
+margin_right = -111.897
+margin_bottom = 46.8945
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Username" type="Label" parent="AvatarRect/LoginPanels/FrontRect"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -77.6796
+margin_top = 20.2468
+margin_right = 159.32
+margin_bottom = 60.2468
+text = "You Are Not Logged In"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SignInOut" type="Label" parent="AvatarRect/LoginPanels/FrontRect"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -78.739
+margin_top = 61.7772
+margin_right = 158.261
+margin_bottom = 101.777
+text = "Click Here to Sign In"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LoginForm" type="Control" parent="."]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -512.0
+margin_top = -300.0
+margin_right = 512.0
+margin_bottom = 300.0
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BackRect" type="ColorRect" parent="LoginForm"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -159.0
+margin_top = -158.0
+margin_right = 158.0
+margin_bottom = 147.0
+color = Color( 0, 0, 0, 0.776471 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PasswordLabel" type="Label" parent="LoginForm"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -130.619
+margin_top = -36.4818
+margin_right = -27.6187
+margin_bottom = -17.4818
+text = "Password"
+
+[node name="UsernameLabel" type="Label" parent="LoginForm"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -131.775
+margin_top = -116.448
+margin_right = -28.7748
+margin_bottom = -97.4479
+text = "Username"
+
+[node name="HeaderLabel" type="Label" parent="LoginForm"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -107.04
+margin_top = -145.462
+margin_right = 106.96
+margin_bottom = -123.462
+text = "Login"
+align = 1
+
+[node name="LoginButton" type="Button" parent="LoginForm"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -85.0
+margin_top = 65.0
+margin_right = 93.0
+margin_bottom = 85.0
+text = "Login"
+
+[node name="PasswordField" type="LineEdit" parent="LoginForm"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -132.0
+margin_top = -15.0
+margin_right = 132.0
+margin_bottom = 9.0
+secret = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="UsernameField" type="LineEdit" parent="LoginForm"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -131.646
+margin_top = -97.7315
+margin_right = 132.354
+margin_bottom = -73.7315
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HTTPRequest" type="HTTPRequest" parent="LoginForm"]
+[connection signal="finished" from="AvatarRect/VideoPlayer" to="AvatarRect/VideoPlayer" method="_on_VideoPlayer_finished"]
+[connection signal="gui_input" from="AvatarRect/LoginPanels/FrontRect" to="AvatarRect/LoginPanels" method="_on_FrontRect_gui_input"]
+[connection signal="mouse_entered" from="AvatarRect/LoginPanels/FrontRect" to="AvatarRect/LoginPanels" method="_on_FrontRect_mouse_entered"]
+[connection signal="mouse_exited" from="AvatarRect/LoginPanels/FrontRect" to="AvatarRect/LoginPanels" method="_on_FrontRect_mouse_exited"]
+[connection signal="gui_input" from="LoginForm" to="LoginForm" method="_on_LoginForm_gui_input"]
+[connection signal="ready" from="LoginForm" to="LoginForm" method="_on_LoginForm_ready"]
+[connection signal="pressed" from="LoginForm/LoginButton" to="LoginForm" method="_on_LoginButton_pressed"]
+[connection signal="request_completed" from="LoginForm/HTTPRequest" to="LoginForm" method="_on_HTTPRequest_request_completed"]
