@@ -216,6 +216,10 @@ margin_left = 124.0
 margin_top = -155.0
 margin_right = 146.0
 margin_bottom = -135.0
+text = "X"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="finished" from="AvatarRect/VideoPlayer" to="AvatarRect/VideoPlayer" method="_on_VideoPlayer_finished"]
 [connection signal="gui_input" from="AvatarRect/LoginPanels/FrontRect" to="AvatarRect/LoginPanels" method="_on_FrontRect_gui_input"]
 [connection signal="mouse_entered" from="AvatarRect/LoginPanels/FrontRect" to="AvatarRect/LoginPanels" method="_on_FrontRect_mouse_entered"]
