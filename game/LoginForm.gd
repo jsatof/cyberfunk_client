@@ -2,13 +2,6 @@ extends Control
 
 func _on_LoginForm_ready():
 	self.visible = false
-	
-# STUB - escape key input not detected
-func _on_LoginForm_gui_input(event):
-	if self.visible:
-		if event is InputEventKey:
-			if event.pressed == KEY_ESCAPE:
-				self.visible = false
 
 func _on_LoginButton_pressed():
 	var username = $UsernameField.text
@@ -34,5 +27,5 @@ func _on_HTTPRequest_request_completed(result, response_code, headers, body):
 	$UsernameField.text = ""
 	$PasswordField.text = ""
 
-
-
+func _on_XButton_pressed():
+	self.visible = false
