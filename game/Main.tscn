@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://assets/Music - 35889.webm" type="VideoStream" id=1]
 [ext_resource path="res://VideoPlayer.gd" type="Script" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://LoginForm.gd" type="Script" id=5]
 [ext_resource path="res://assets/Jura-DemiBold.otf" type="DynamicFontData" id=6]
 [ext_resource path="res://assets/Cyberpunk.otf" type="DynamicFontData" id=7]
+[ext_resource path="res://MainMenuNode.gd" type="Script" id=8]
 
 [sub_resource type="DynamicFont" id=1]
 size = 26
@@ -21,6 +22,7 @@ outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 7 )
 
 [node name="MainMenuNode" type="Node"]
+script = ExtResource( 8 )
 
 [node name="AvatarRect" type="Control" parent="."]
 anchor_right = 1.0
