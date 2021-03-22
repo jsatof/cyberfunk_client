@@ -224,7 +224,6 @@ __meta__ = {
 [connection signal="gui_input" from="AvatarRect/LoginPanels/FrontRect" to="AvatarRect/LoginPanels" method="_on_FrontRect_gui_input"]
 [connection signal="mouse_entered" from="AvatarRect/LoginPanels/FrontRect" to="AvatarRect/LoginPanels" method="_on_FrontRect_mouse_entered"]
 [connection signal="mouse_exited" from="AvatarRect/LoginPanels/FrontRect" to="AvatarRect/LoginPanels" method="_on_FrontRect_mouse_exited"]
-[connection signal="gui_input" from="LoginForm" to="LoginForm" method="_on_LoginForm_gui_input"]
 [connection signal="ready" from="LoginForm" to="LoginForm" method="_on_LoginForm_ready"]
 [connection signal="pressed" from="LoginForm/LoginButton" to="LoginForm" method="_on_LoginButton_pressed"]
 [connection signal="request_completed" from="LoginForm/HTTPRequest" to="LoginForm" method="_on_HTTPRequest_request_completed"]
