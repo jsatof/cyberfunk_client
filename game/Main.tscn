@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://Music - 35889.webm" type="VideoStream" id=1]
+[ext_resource path="res://assets/Music - 35889.webm" type="VideoStream" id=1]
 [ext_resource path="res://VideoPlayer.gd" type="Script" id=2]
-[ext_resource path="res://icon.png" type="Texture" id=3]
+[ext_resource path="res://assets/icon.png" type="Texture" id=3]
 [ext_resource path="res://LoginPanel.gd" type="Script" id=4]
 [ext_resource path="res://LoginForm.gd" type="Script" id=5]
 
@@ -106,6 +106,7 @@ __meta__ = {
 }
 
 [node name="LoginForm" type="Control" parent="."]
+visible = false
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -217,6 +218,19 @@ margin_top = -155.0
 margin_right = 146.0
 margin_bottom = -135.0
 text = "X"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -129.025
+margin_top = -30.3699
+margin_right = 128.975
+margin_bottom = 30.6301
 __meta__ = {
 "_edit_use_anchors_": false
 }
