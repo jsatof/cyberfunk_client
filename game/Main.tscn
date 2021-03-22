@@ -16,7 +16,7 @@ outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 6 )
 
 [sub_resource type="DynamicFont" id=2]
-size = 72
+size = 100
 outline_size = 5
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 7 )
@@ -261,11 +261,12 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -233.107
-margin_top = -205.189
-margin_right = 245.893
-margin_bottom = -116.189
+margin_left = -330.606
+margin_top = -220.453
+margin_right = 337.394
+margin_bottom = -120.453
 custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0.92549, 0.152941, 0.839216, 1 )
 text = "Cyberfunk"
 align = 1
 valign = 1
