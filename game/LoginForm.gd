@@ -28,4 +28,6 @@ func _on_HTTPRequest_request_completed(result, response_code, headers, body):
 	$PasswordField.text = ""
 
 func _on_XButton_pressed():
+	get_parent().get_node("PressStart").visible = true
+	get_parent().get_node("Title").visible = true
 	self.visible = false
