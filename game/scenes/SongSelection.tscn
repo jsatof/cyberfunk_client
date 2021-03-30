@@ -15,10 +15,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -138.346
-margin_top = -16.4611
-margin_right = 142.654
-margin_bottom = 18.5389
+margin_left = -87.4306
+margin_top = -6.99323
+margin_right = 81.5694
+margin_bottom = 13.0068
 text = "Proceed"
 __meta__ = {
 "_edit_use_anchors_": false

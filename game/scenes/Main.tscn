@@ -1,22 +1,30 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://assets/Jura-DemiBold.otf" type="DynamicFontData" id=1]
 [ext_resource path="res://assets/Cyberpunk.otf" type="DynamicFontData" id=2]
 [ext_resource path="res://scripts/VideoPlayer.gd" type="Script" id=3]
 [ext_resource path="res://scripts/LoginForm.gd" type="Script" id=4]
 [ext_resource path="res://assets/Music - 35889.webm" type="VideoStream" id=5]
-[ext_resource path="res://assets/icon.png" type="Texture" id=6]
+[ext_resource path="res://assets/Jura-Medium.otf" type="DynamicFontData" id=6]
 [ext_resource path="res://scripts/LoginPanel.gd" type="Script" id=7]
 [ext_resource path="res://scripts/MainMenu.gd" type="Script" id=8]
 
+[sub_resource type="DynamicFont" id=3]
+size = 12
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 12
+font_data = ExtResource( 6 )
+
 [sub_resource type="DynamicFont" id=1]
-size = 24
+size = 14
 outline_size = 2
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 1 )
 
 [sub_resource type="DynamicFont" id=2]
-size = 144
+size = 64
 outline_size = 5
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 2 )
@@ -44,10 +52,10 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -435.261
-margin_top = -146.034
-margin_right = -1.26135
-margin_bottom = -13.0339
+margin_left = -435.0
+margin_top = -126.0
+margin_right = -1.0
+margin_bottom = -13.0
 script = ExtResource( 7 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -58,10 +66,10 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -427.186
-margin_top = -107.523
-margin_right = -2.18579
-margin_bottom = -4.52316
+margin_left = -220.0
+margin_top = -59.0
+margin_right = -2.0
+margin_bottom = -5.0
 color = Color( 0.8, 0.141176, 0.792157, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -72,25 +80,11 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -433.913
-margin_top = -100.796
-margin_right = -8.9129
-margin_bottom = 2.20404
+margin_left = -226.0
+margin_top = -54.0
+margin_right = -9.0
+margin_bottom = 2.0
 color = Color( 0.270588, 0.807843, 0.619608, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="AvatarTexture" type="TextureRect" parent="LoginPanels/FrontRect"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -182.897
-margin_top = -24.1055
-margin_right = -111.897
-margin_bottom = 46.8945
-texture = ExtResource( 6 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -98,10 +92,11 @@ __meta__ = {
 [node name="Username" type="Label" parent="LoginPanels/FrontRect"]
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = -77.6796
-margin_top = 20.2468
-margin_right = 159.32
-margin_bottom = 60.2468
+margin_left = -70.5
+margin_top = 8.0
+margin_right = 96.5
+margin_bottom = 29.0
+custom_fonts/font = SubResource( 3 )
 text = "You Are Not Logged In"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -110,24 +105,26 @@ __meta__ = {
 [node name="SignInOut" type="Label" parent="LoginPanels/FrontRect"]
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = -78.739
-margin_top = 61.7772
-margin_right = 158.261
-margin_bottom = 101.777
+margin_left = -61.2323
+margin_top = 29.0
+margin_right = 89.7677
+margin_bottom = 55.0
+custom_fonts/font = SubResource( 4 )
 text = "Click Here to Sign In"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="LoginForm" type="Control" parent="."]
+visible = false
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -512.0
-margin_top = -300.0
+margin_top = -299.251
 margin_right = 512.0
-margin_bottom = 300.0
+margin_bottom = 300.749
 script = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -138,69 +135,72 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -159.0
-margin_top = -158.0
-margin_right = 158.0
-margin_bottom = 147.0
+margin_left = -131.769
+margin_top = -152.247
+margin_right = 132.231
+margin_bottom = 152.753
 color = Color( 0, 0, 0, 0.776471 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="PasswordLabel" type="Label" parent="LoginForm"]
+[node name="PasswordLabel" type="Label" parent="LoginForm/BackRect"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -130.619
-margin_top = -36.4818
-margin_right = -27.6187
-margin_bottom = -17.4818
+margin_left = -103.899
+margin_top = -29.4835
+margin_right = -0.898315
+margin_bottom = -10.4835
 text = "Password"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="UsernameLabel" type="Label" parent="LoginForm"]
+[node name="UsernameLabel" type="Label" parent="LoginForm/BackRect"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -131.775
-margin_top = -116.448
-margin_right = -28.7748
-margin_bottom = -97.4479
+margin_left = -104.224
+margin_top = -98.7542
+margin_right = -1.22379
+margin_bottom = -80.7542
 text = "Username"
 
-[node name="HeaderLabel" type="Label" parent="LoginForm"]
+[node name="HeaderLabel" type="Label" parent="LoginForm/BackRect"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -107.04
-margin_top = -145.462
-margin_right = 106.96
-margin_bottom = -123.462
+margin_left = -102.794
+margin_top = -139.962
+margin_right = 111.206
+margin_bottom = -117.962
 text = "Login"
 align = 1
 
-[node name="LoginButton" type="Button" parent="LoginForm"]
+[node name="LoginButton" type="Button" parent="LoginForm/BackRect"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -85.0
-margin_top = 65.0
-margin_right = 93.0
-margin_bottom = 85.0
+margin_left = -57.7881
+margin_top = 59.5101
+margin_right = 65.2119
+margin_bottom = 79.5101
 text = "Login"
 
-[node name="PasswordField" type="LineEdit" parent="LoginForm"]
+[node name="PasswordField" type="LineEdit" parent="LoginForm/BackRect"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -132.0
-margin_top = -15.0
-margin_right = 132.0
-margin_bottom = 9.0
+margin_left = -106.0
+margin_top = -10.5
+margin_right = 103.0
+margin_bottom = 13.5
 secret = true
 caret_blink = true
 caret_blink_speed = 0.5
@@ -208,32 +208,32 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="UsernameField" type="LineEdit" parent="LoginForm"]
+[node name="UsernameField" type="LineEdit" parent="LoginForm/BackRect"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -131.646
-margin_top = -97.7315
-margin_right = 132.354
-margin_bottom = -73.7315
+margin_left = -104.753
+margin_top = -74.2525
+margin_right = 106.247
+margin_bottom = -50.2525
 caret_blink = true
 caret_blink_speed = 0.5
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="HTTPRequest" type="HTTPRequest" parent="LoginForm"]
+[node name="HTTPRequest" type="HTTPRequest" parent="LoginForm/BackRect"]
 
-[node name="XButton" type="Button" parent="LoginForm"]
+[node name="XButton" type="Button" parent="LoginForm/BackRect"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = 124.0
-margin_top = -155.0
-margin_right = 146.0
-margin_bottom = -135.0
+margin_left = 91.5372
+margin_top = -140.51
+margin_right = 113.537
+margin_bottom = -120.51
 text = "X"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -262,10 +262,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -478.915
-margin_top = -250.183
-margin_right = 481.085
-margin_bottom = -105.183
+margin_left = -481.912
+margin_top = -161.034
+margin_right = 478.088
+margin_bottom = -16.0337
 custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0.92549, 0.152941, 0.839216, 1 )
 text = "Cyberfunk"
@@ -279,6 +279,6 @@ __meta__ = {
 [connection signal="mouse_entered" from="LoginPanels/FrontRect" to="LoginPanels" method="_on_FrontRect_mouse_entered"]
 [connection signal="mouse_exited" from="LoginPanels/FrontRect" to="LoginPanels" method="_on_FrontRect_mouse_exited"]
 [connection signal="ready" from="LoginForm" to="LoginForm" method="_on_LoginForm_ready"]
-[connection signal="pressed" from="LoginForm/LoginButton" to="LoginForm" method="_on_LoginButton_pressed"]
-[connection signal="request_completed" from="LoginForm/HTTPRequest" to="LoginForm" method="_on_HTTPRequest_request_completed"]
-[connection signal="pressed" from="LoginForm/XButton" to="LoginForm" method="_on_XButton_pressed"]
+[connection signal="pressed" from="LoginForm/BackRect/LoginButton" to="LoginForm" method="_on_LoginButton_pressed"]
+[connection signal="request_completed" from="LoginForm/BackRect/HTTPRequest" to="LoginForm" method="_on_HTTPRequest_request_completed"]
+[connection signal="pressed" from="LoginForm/BackRect/XButton" to="LoginForm" method="_on_XButton_pressed"]
