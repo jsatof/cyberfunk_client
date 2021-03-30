@@ -16,8 +16,15 @@ _global_script_class_icons={
 [application]
 
 config/name="Cyberfunk"
-run/main_scene="res://Main.tscn"
+run/main_scene="res://scripts/Main.tscn"
 config/icon="res://icon.png"
+
+[display]
+
+window/size/width=640
+window/size/height=360
+window/size/resizable=false
+window/size/fullscreen=true
 
 [rendering]
 

@@ -1,48 +1,45 @@
 [gd_scene load_steps=11 format=2]
 
-[ext_resource path="res://assets/Music - 35889.webm" type="VideoStream" id=1]
-[ext_resource path="res://VideoPlayer.gd" type="Script" id=2]
-[ext_resource path="res://assets/icon.png" type="Texture" id=3]
-[ext_resource path="res://LoginPanel.gd" type="Script" id=4]
-[ext_resource path="res://LoginForm.gd" type="Script" id=5]
-[ext_resource path="res://assets/Jura-DemiBold.otf" type="DynamicFontData" id=6]
-[ext_resource path="res://assets/Cyberpunk.otf" type="DynamicFontData" id=7]
-[ext_resource path="res://MainMenuNode.gd" type="Script" id=8]
+[ext_resource path="res://assets/Jura-DemiBold.otf" type="DynamicFontData" id=1]
+[ext_resource path="res://assets/Cyberpunk.otf" type="DynamicFontData" id=2]
+[ext_resource path="res://scripts/LoginPanel.gd" type="Script" id=3]
+[ext_resource path="res://scripts/LoginForm.gd" type="Script" id=4]
+[ext_resource path="res://assets/Music - 35889.webm" type="VideoStream" id=5]
+[ext_resource path="res://assets/icon.png" type="Texture" id=6]
+[ext_resource path="res://scripts/VideoPlayer.gd" type="Script" id=7]
+[ext_resource path="res://scripts/MainMenu.gd" type="Script" id=8]
 
 [sub_resource type="DynamicFont" id=1]
-size = 26
+size = 24
 outline_size = 2
 outline_color = Color( 0, 0, 0, 1 )
-font_data = ExtResource( 6 )
+font_data = ExtResource( 1 )
 
 [sub_resource type="DynamicFont" id=2]
-size = 100
+size = 144
 outline_size = 5
 outline_color = Color( 0, 0, 0, 1 )
-font_data = ExtResource( 7 )
+font_data = ExtResource( 2 )
 
-[node name="MainMenuNode" type="Node"]
+[node name="MainMenu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
 script = ExtResource( 8 )
-
-[node name="AvatarRect" type="Control" parent="."]
-anchor_right = 1.0
-anchor_bottom = 1.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="VideoPlayer" type="VideoPlayer" parent="AvatarRect"]
+[node name="VideoPlayer" type="VideoPlayer" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-stream = ExtResource( 1 )
+stream = ExtResource( 5 )
 autoplay = true
-script = ExtResource( 2 )
+script = ExtResource( 7 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="LoginPanels" type="Control" parent="AvatarRect"]
-visible = false
+[node name="LoginPanels" type="Control" parent="."]
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
@@ -51,12 +48,12 @@ margin_left = -435.261
 margin_top = -146.034
 margin_right = -1.26135
 margin_bottom = -13.0339
-script = ExtResource( 4 )
+script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="BackRect" type="ColorRect" parent="AvatarRect/LoginPanels"]
+[node name="BackRect" type="ColorRect" parent="LoginPanels"]
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
@@ -70,7 +67,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="FrontRect" type="ColorRect" parent="AvatarRect/LoginPanels"]
+[node name="FrontRect" type="ColorRect" parent="LoginPanels"]
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
@@ -84,7 +81,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="AvatarTexture" type="TextureRect" parent="AvatarRect/LoginPanels/FrontRect"]
+[node name="AvatarTexture" type="TextureRect" parent="LoginPanels/FrontRect"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -93,12 +90,12 @@ margin_left = -182.897
 margin_top = -24.1055
 margin_right = -111.897
 margin_bottom = 46.8945
-texture = ExtResource( 3 )
+texture = ExtResource( 6 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Username" type="Label" parent="AvatarRect/LoginPanels/FrontRect"]
+[node name="Username" type="Label" parent="LoginPanels/FrontRect"]
 anchor_left = 0.5
 anchor_right = 0.5
 margin_left = -77.6796
@@ -110,7 +107,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="SignInOut" type="Label" parent="AvatarRect/LoginPanels/FrontRect"]
+[node name="SignInOut" type="Label" parent="LoginPanels/FrontRect"]
 anchor_left = 0.5
 anchor_right = 0.5
 margin_left = -78.739
@@ -123,7 +120,6 @@ __meta__ = {
 }
 
 [node name="LoginForm" type="Control" parent="."]
-visible = false
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -132,7 +128,7 @@ margin_left = -512.0
 margin_top = -300.0
 margin_right = 512.0
 margin_bottom = 300.0
-script = ExtResource( 5 )
+script = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -206,6 +202,8 @@ margin_top = -15.0
 margin_right = 132.0
 margin_bottom = 9.0
 secret = true
+caret_blink = true
+caret_blink_speed = 0.5
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -219,6 +217,8 @@ margin_left = -131.646
 margin_top = -97.7315
 margin_right = 132.354
 margin_bottom = -73.7315
+caret_blink = true
+caret_blink_speed = 0.5
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -262,10 +262,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -330.606
-margin_top = -220.453
-margin_right = 337.394
-margin_bottom = -120.453
+margin_left = -478.915
+margin_top = -250.183
+margin_right = 481.085
+margin_bottom = -105.183
 custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0.92549, 0.152941, 0.839216, 1 )
 text = "Cyberfunk"
@@ -274,10 +274,11 @@ valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
-[connection signal="finished" from="AvatarRect/VideoPlayer" to="AvatarRect/VideoPlayer" method="_on_VideoPlayer_finished"]
-[connection signal="gui_input" from="AvatarRect/LoginPanels/FrontRect" to="AvatarRect/LoginPanels" method="_on_FrontRect_gui_input"]
-[connection signal="mouse_entered" from="AvatarRect/LoginPanels/FrontRect" to="AvatarRect/LoginPanels" method="_on_FrontRect_mouse_entered"]
-[connection signal="mouse_exited" from="AvatarRect/LoginPanels/FrontRect" to="AvatarRect/LoginPanels" method="_on_FrontRect_mouse_exited"]
+[connection signal="gui_input" from="." to="." method="_on_AvatarRect_gui_input"]
+[connection signal="finished" from="VideoPlayer" to="VideoPlayer" method="_on_VideoPlayer_finished"]
+[connection signal="gui_input" from="LoginPanels/FrontRect" to="LoginPanels" method="_on_FrontRect_gui_input"]
+[connection signal="mouse_entered" from="LoginPanels/FrontRect" to="LoginPanels" method="_on_FrontRect_mouse_entered"]
+[connection signal="mouse_exited" from="LoginPanels/FrontRect" to="LoginPanels" method="_on_FrontRect_mouse_exited"]
 [connection signal="ready" from="LoginForm" to="LoginForm" method="_on_LoginForm_ready"]
 [connection signal="pressed" from="LoginForm/LoginButton" to="LoginForm" method="_on_LoginButton_pressed"]
 [connection signal="request_completed" from="LoginForm/HTTPRequest" to="LoginForm" method="_on_HTTPRequest_request_completed"]
