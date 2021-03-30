@@ -1,0 +1,284 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://assets/Jura-DemiBold.otf" type="DynamicFontData" id=1]
+[ext_resource path="res://assets/Cyberpunk.otf" type="DynamicFontData" id=2]
+[ext_resource path="res://scripts/VideoPlayer.gd" type="Script" id=3]
+[ext_resource path="res://scripts/LoginForm.gd" type="Script" id=4]
+[ext_resource path="res://assets/Music - 35889.webm" type="VideoStream" id=5]
+[ext_resource path="res://assets/icon.png" type="Texture" id=6]
+[ext_resource path="res://scripts/LoginPanel.gd" type="Script" id=7]
+[ext_resource path="res://scripts/MainMenu.gd" type="Script" id=8]
+
+[sub_resource type="DynamicFont" id=1]
+size = 24
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 144
+outline_size = 5
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 2 )
+
+[node name="MainMenu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VideoPlayer" type="VideoPlayer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+stream = ExtResource( 5 )
+autoplay = true
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LoginPanels" type="Control" parent="."]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -435.261
+margin_top = -146.034
+margin_right = -1.26135
+margin_bottom = -13.0339
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BackRect" type="ColorRect" parent="LoginPanels"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -427.186
+margin_top = -107.523
+margin_right = -2.18579
+margin_bottom = -4.52316
+color = Color( 0.8, 0.141176, 0.792157, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FrontRect" type="ColorRect" parent="LoginPanels"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -433.913
+margin_top = -100.796
+margin_right = -8.9129
+margin_bottom = 2.20404
+color = Color( 0.270588, 0.807843, 0.619608, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AvatarTexture" type="TextureRect" parent="LoginPanels/FrontRect"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -182.897
+margin_top = -24.1055
+margin_right = -111.897
+margin_bottom = 46.8945
+texture = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Username" type="Label" parent="LoginPanels/FrontRect"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -77.6796
+margin_top = 20.2468
+margin_right = 159.32
+margin_bottom = 60.2468
+text = "You Are Not Logged In"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SignInOut" type="Label" parent="LoginPanels/FrontRect"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -78.739
+margin_top = 61.7772
+margin_right = 158.261
+margin_bottom = 101.777
+text = "Click Here to Sign In"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LoginForm" type="Control" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -512.0
+margin_top = -300.0
+margin_right = 512.0
+margin_bottom = 300.0
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BackRect" type="ColorRect" parent="LoginForm"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -159.0
+margin_top = -158.0
+margin_right = 158.0
+margin_bottom = 147.0
+color = Color( 0, 0, 0, 0.776471 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PasswordLabel" type="Label" parent="LoginForm"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -130.619
+margin_top = -36.4818
+margin_right = -27.6187
+margin_bottom = -17.4818
+text = "Password"
+
+[node name="UsernameLabel" type="Label" parent="LoginForm"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -131.775
+margin_top = -116.448
+margin_right = -28.7748
+margin_bottom = -97.4479
+text = "Username"
+
+[node name="HeaderLabel" type="Label" parent="LoginForm"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -107.04
+margin_top = -145.462
+margin_right = 106.96
+margin_bottom = -123.462
+text = "Login"
+align = 1
+
+[node name="LoginButton" type="Button" parent="LoginForm"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -85.0
+margin_top = 65.0
+margin_right = 93.0
+margin_bottom = 85.0
+text = "Login"
+
+[node name="PasswordField" type="LineEdit" parent="LoginForm"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -132.0
+margin_top = -15.0
+margin_right = 132.0
+margin_bottom = 9.0
+secret = true
+caret_blink = true
+caret_blink_speed = 0.5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="UsernameField" type="LineEdit" parent="LoginForm"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -131.646
+margin_top = -97.7315
+margin_right = 132.354
+margin_bottom = -73.7315
+caret_blink = true
+caret_blink_speed = 0.5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HTTPRequest" type="HTTPRequest" parent="LoginForm"]
+
+[node name="XButton" type="Button" parent="LoginForm"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 124.0
+margin_top = -155.0
+margin_right = 146.0
+margin_bottom = -135.0
+text = "X"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PressStart" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -129.025
+margin_top = -30.3699
+margin_right = 128.975
+margin_bottom = 30.6301
+size_flags_vertical = 0
+custom_fonts/font = SubResource( 1 )
+text = "Press Start"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -478.915
+margin_top = -250.183
+margin_right = 481.085
+margin_bottom = -105.183
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0.92549, 0.152941, 0.839216, 1 )
+text = "Cyberfunk"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="finished" from="VideoPlayer" to="VideoPlayer" method="_on_VideoPlayer_finished"]
+[connection signal="gui_input" from="LoginPanels/FrontRect" to="LoginPanels" method="_on_FrontRect_gui_input"]
+[connection signal="mouse_entered" from="LoginPanels/FrontRect" to="LoginPanels" method="_on_FrontRect_mouse_entered"]
+[connection signal="mouse_exited" from="LoginPanels/FrontRect" to="LoginPanels" method="_on_FrontRect_mouse_exited"]
+[connection signal="ready" from="LoginForm" to="LoginForm" method="_on_LoginForm_ready"]
+[connection signal="pressed" from="LoginForm/LoginButton" to="LoginForm" method="_on_LoginButton_pressed"]
+[connection signal="request_completed" from="LoginForm/HTTPRequest" to="LoginForm" method="_on_HTTPRequest_request_completed"]
+[connection signal="pressed" from="LoginForm/XButton" to="LoginForm" method="_on_XButton_pressed"]
