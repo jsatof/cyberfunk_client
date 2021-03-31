@@ -1,16 +1,26 @@
 extends Node2D
 
+func _input(event):
+	if Input.is_action_pressed("d_key"):
+		$NoteButtonD.frame = 1
+	
+	elif Input.is_action_pressed("f_key"):
+		$NoteButtonF.frame = 1
+		
+	elif Input.is_action_pressed("j_key"):
+		$NoteButtonJ.frame = 1
+		
+	elif Input.is_action_pressed("k_key"):
+		$NoteButtonK.frame = 1
+		
+	if Input.is_action_just_released("d_key"):
+		$NoteButtonD.frame = 0
+	
+	elif Input.is_action_just_released("f_key"):
+		$NoteButtonF.frame = 0
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+	elif Input.is_action_just_released("j_key"):
+		$NoteButtonJ.frame = 0
+		
+	elif Input.is_action_just_released("k_key"):
+		$NoteButtonK.frame = 0
