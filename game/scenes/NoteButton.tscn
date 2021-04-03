@@ -22,13 +22,13 @@ animations = [ {
 } ]
 
 [sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 71.4431, 24.6588 )
+extents = Vector2( 69.0422, 24.6588 )
 
 [sub_resource type="RectangleShape2D" id=5]
-extents = Vector2( 72.0729, 41.1795 )
+extents = Vector2( 68.7887, 41.1795 )
 
 [sub_resource type="RectangleShape2D" id=6]
-extents = Vector2( 72.5855, 51.7285 )
+extents = Vector2( 68.2417, 51.7285 )
 
 [node name="NoteButton" type="AnimatedSprite"]
 frames = SubResource( 3 )
