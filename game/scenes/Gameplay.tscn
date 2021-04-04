@@ -48,7 +48,6 @@ font_data = ExtResource( 5 )
 script = ExtResource( 3 )
 
 [node name="Background" type="Sprite" parent="."]
-visible = false
 modulate = Color( 0.458824, 0.458824, 0.458824, 1 )
 position = Vector2( 320.01, 179.59 )
 scale = Vector2( 0.167167, 0.167422 )
