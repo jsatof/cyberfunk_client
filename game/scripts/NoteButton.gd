@@ -9,7 +9,6 @@ var is_pressed = false
 
 export(int, 1, 4) var lane
 
-
 func _input(event):
 	match lane:
 		1:
@@ -38,45 +37,4 @@ func _process(delta):
 		self.frame = 1
 	else:
 		self.frame = 0
-	
-func _on_PerfectArea_area_entered(area):
-	if area.is_in_group("note_group"):
-		perfect = true
 
-
-func _on_PerfectArea_area_exited(area):
-	if area.is_in_group("note_group"):
-		perfect = false
-
-
-func _on_GoodArea_area_entered(area):
-	if area.is_in_group("note_group"):
-		good = true
-
-
-func _on_GoodArea_area_exited(area):
-	if area.is_in_group("note_group"):
-		good = false
-
-
-func _on_GreatArea_area_entered(area):
-	if area.is_in_group("note_group"):
-		great = true
-		current_note = area
-
-
-func _on_GreatArea_area_exited(area):
-	if area.is_in_group("note_group"):
-		great = false
-		current_note = null
-
-
-func _on_PushTimer_timeout():
-	pass
-
-
-func _reset():
-	current_note = null
-	perfect = false
-	good = false
-	great = false

@@ -34,29 +34,26 @@ extents = Vector2( 68.2417, 51.7285 )
 frames = SubResource( 3 )
 script = ExtResource( 2 )
 
-[node name="PerfectArea" type="Area2D" parent="."]
+[node name="PerfectArea" type="Area2D" parent="." groups=[
+"perfect_area",
+]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PerfectArea"]
 position = Vector2( 28.9865, -162.115 )
 shape = SubResource( 4 )
 
-[node name="GreatArea" type="Area2D" parent="."]
+[node name="GreatArea" type="Area2D" parent="." groups=[
+"great_area",
+]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GreatArea"]
 position = Vector2( 28.8865, -161.997 )
 shape = SubResource( 5 )
 
-[node name="GoodArea" type="Area2D" parent="."]
+[node name="GoodArea" type="Area2D" parent="." groups=[
+"good_area",
+]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GoodArea"]
 position = Vector2( 29.4334, -160.454 )
 shape = SubResource( 6 )
-
-[node name="PushTimer" type="Timer" parent="."]
-[connection signal="area_entered" from="PerfectArea" to="." method="_on_PerfectArea_area_entered"]
-[connection signal="area_exited" from="PerfectArea" to="." method="_on_PerfectArea_area_exited"]
-[connection signal="area_entered" from="GreatArea" to="." method="_on_GreatArea_area_entered"]
-[connection signal="area_exited" from="GreatArea" to="." method="_on_GreatArea_area_exited"]
-[connection signal="area_entered" from="GoodArea" to="." method="_on_GoodArea_area_entered"]
-[connection signal="area_exited" from="GoodArea" to="." method="_on_GoodArea_area_exited"]
-[connection signal="timeout" from="PushTimer" to="." method="_on_PushTimer_timeout"]
