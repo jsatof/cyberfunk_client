@@ -1,0 +1,37 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://scripts/SongSelection.gd" type="Script" id=1]
+
+[node name="SongSelection" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -87.4306
+margin_top = -6.99323
+margin_right = 81.5694
+margin_bottom = 13.0068
+text = "Proceed"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -42.7289
+margin_top = -51.0339
+margin_right = 50.2711
+margin_bottom = -30.0339
+text = "Song Selection"
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

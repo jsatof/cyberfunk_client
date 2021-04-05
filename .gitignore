@@ -6,3 +6,6 @@ game/.import/
 
 # compiled c objects
 src/*.os
+
+# static assets
+game/assets
