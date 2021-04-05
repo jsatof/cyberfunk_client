@@ -1,0 +1,153 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Background.png" type="Texture" id=1]
+[ext_resource path="res://Button.png" type="Texture" id=2]
+[ext_resource path="res://vaporwavesun.jpg" type="Texture" id=3]
+[ext_resource path="res://Cyberpunk.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://BackButton.gd" type="Script" id=5]
+[ext_resource path="res://Dull_Button.png" type="Texture" id=6]
+[ext_resource path="res://Inverse_Button.png" type="Texture" id=7]
+
+[sub_resource type="DynamicFont" id=1]
+size = 45
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+use_filter = true
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 34
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 4 )
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Control" type="Control" parent="."]
+margin_right = 1025.0
+margin_bottom = 598.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Control"]
+margin_right = 1024.0
+margin_bottom = 601.0
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="Control"]
+position = Vector2( 513.158, 299.342 )
+scale = Vector2( 1.43044, 1.14113 )
+texture = ExtResource( 3 )
+
+[node name="Title" type="Label" parent="Control"]
+margin_left = 37.4178
+margin_right = 372.418
+margin_bottom = 59.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.854902, 0.0470588, 0.803922, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+text = "Song Select"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SongButton" type="TextureButton" parent="Control"]
+margin_left = 691.858
+margin_top = 226.777
+margin_right = 1025.86
+margin_bottom = 267.777
+texture_normal = ExtResource( 6 )
+texture_pressed = ExtResource( 7 )
+texture_hover = ExtResource( 2 )
+texture_focused = ExtResource( 7 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SongButton2" type="TextureButton" parent="Control"]
+margin_left = 691.675
+margin_top = 286.955
+margin_right = 1025.67
+margin_bottom = 327.955
+texture_normal = ExtResource( 6 )
+texture_pressed = ExtResource( 7 )
+texture_hover = ExtResource( 2 )
+texture_focused = ExtResource( 7 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SongButton3" type="TextureButton" parent="Control"]
+margin_left = 691.675
+margin_top = 344.686
+margin_right = 1025.67
+margin_bottom = 385.686
+texture_normal = ExtResource( 6 )
+texture_pressed = ExtResource( 7 )
+texture_hover = ExtResource( 2 )
+texture_focused = ExtResource( 7 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SongButton4" type="TextureButton" parent="Control"]
+margin_left = 691.858
+margin_top = 401.103
+margin_right = 1025.86
+margin_bottom = 442.103
+texture_normal = ExtResource( 6 )
+texture_pressed = ExtResource( 7 )
+texture_hover = ExtResource( 2 )
+texture_focused = ExtResource( 7 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BackButton" type="TextureButton" parent="Control"]
+margin_left = 20.0
+margin_top = 538.0
+margin_right = 153.0
+margin_bottom = 594.0
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BackButtonLabel" type="Label" parent="Control/BackButton"]
+margin_left = 7.1272
+margin_top = 5.3454
+margin_right = 115.127
+margin_bottom = 46.3454
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0.854902, 0.0470588, 0.803922, 1 )
+text = "Back"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GoButton" type="TextureButton" parent="Control"]
+margin_left = 846.0
+margin_top = 536.0
+margin_right = 1014.0
+margin_bottom = 592.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BackButtonLabel" type="Label" parent="Control/GoButton"]
+margin_left = 64.0
+margin_top = 9.0
+margin_right = 142.0
+margin_bottom = 52.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0.854902, 0.0470588, 0.803922, 1 )
+text = "GO"
+[connection signal="pressed" from="Control/BackButton" to="Control/BackButton" method="_on_BackButton_pressed"]
