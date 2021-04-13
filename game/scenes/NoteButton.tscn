@@ -22,13 +22,13 @@ animations = [ {
 } ]
 
 [sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 69.0422, 24.6588 )
+extents = Vector2( 19.1911, 13.7366 )
 
 [sub_resource type="RectangleShape2D" id=5]
-extents = Vector2( 68.7887, 41.1795 )
+extents = Vector2( 18.9375, 25.1683 )
 
 [sub_resource type="RectangleShape2D" id=6]
-extents = Vector2( 68.2417, 51.7285 )
+extents = Vector2( 19.4513, 35.1966 )
 
 [node name="NoteButton" type="AnimatedSprite"]
 frames = SubResource( 3 )
@@ -55,5 +55,5 @@ shape = SubResource( 5 )
 ]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GoodArea"]
-position = Vector2( 29.4334, -160.454 )
+position = Vector2( 29.0799, -160.454 )
 shape = SubResource( 6 )

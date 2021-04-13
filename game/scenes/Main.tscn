@@ -9,21 +9,21 @@
 [ext_resource path="res://scripts/LoginPanel.gd" type="Script" id=7]
 [ext_resource path="res://scripts/MainMenu.gd" type="Script" id=8]
 
-[sub_resource type="DynamicFont" id=3]
-size = 12
-font_data = ExtResource( 6 )
-
-[sub_resource type="DynamicFont" id=4]
-size = 12
-font_data = ExtResource( 6 )
-
 [sub_resource type="DynamicFont" id=1]
+size = 12
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 12
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=3]
 size = 14
 outline_size = 2
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 1 )
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="DynamicFont" id=4]
 size = 64
 outline_size = 5
 outline_color = Color( 0, 0, 0, 1 )
@@ -96,7 +96,7 @@ margin_left = -70.5
 margin_top = 8.0
 margin_right = 96.5
 margin_bottom = 29.0
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 1 )
 text = "You Are Not Logged In"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -109,7 +109,7 @@ margin_left = -61.2323
 margin_top = 29.0
 margin_right = 89.7677
 margin_bottom = 55.0
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 2 )
 text = "Click Here to Sign In"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -249,7 +249,7 @@ margin_top = -30.3699
 margin_right = 128.975
 margin_bottom = 30.6301
 size_flags_vertical = 0
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 3 )
 text = "Press Start"
 align = 1
 valign = 1
@@ -266,7 +266,7 @@ margin_left = -481.912
 margin_top = -161.034
 margin_right = 478.088
 margin_bottom = -16.0337
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 0.92549, 0.152941, 0.839216, 1 )
 text = "Cyberfunk"
 align = 1

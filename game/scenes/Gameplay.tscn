@@ -1,11 +1,10 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://assets/vaporwave_wallpaper.jpg" type="Texture" id=1]
+[ext_resource path="res://scenes/Music.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scripts/Gameplay.gd" type="Script" id=3]
 [ext_resource path="res://assets/Jura-DemiBold.otf" type="DynamicFontData" id=5]
 [ext_resource path="res://assets/Jura-Medium.otf" type="DynamicFontData" id=6]
-[ext_resource path="res://scenes/Conductor.tscn" type="PackedScene" id=7]
-[ext_resource path="res://assets/Pure_Indigo_In_My_Bed.ogg" type="AudioStream" id=8]
 [ext_resource path="res://scenes/Conveyor.tscn" type="PackedScene" id=9]
 
 [sub_resource type="DynamicFont" id=1]
@@ -180,6 +179,4 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Conductor" parent="." instance=ExtResource( 7 )]
-stream = ExtResource( 8 )
-volume_db = 15.6
+[node name="Music" parent="." instance=ExtResource( 2 )]
