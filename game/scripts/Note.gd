@@ -5,7 +5,6 @@ export(int, 1, 4) var lane
 enum State { PERFECT, GREAT, GOOD, MISS }
 
 var y_pos = 0
-var bar_padding = 25
 
 var is_colliding = false
 var is_collected = false
@@ -35,7 +34,7 @@ func set_spawn_position():
 		4:
 			x = 50
 	
-	self.position = Vector2(x, -self.y_pos - self.bar_padding)
+	self.position = Vector2(x, -self.y_pos)
 
 func _process(delta):
 	collect()
@@ -52,10 +51,15 @@ func collect():
 				match self.hit_state:
 					State.PERFECT:
 						Stats.perfect_count += 1
+						Stats.score += 100 + (Stats.combo * 5)
 					State.GREAT:
 						Stats.great_count += 1
+						Stats.score += 50 + (Stats.combo * 5)
 					State.GOOD:
 						Stats.good_count += 1
+						Stats.score += 25 + (Stats.combo * 5)
+				
+				Stats.combo += 1
 				
 				self.hide()
 
@@ -82,3 +86,7 @@ func _on_Note_area_exited(area):
 	if area.is_in_group("perfect_area") or area.is_in_group("great_area") or area.is_in_group("good_area"):
 		is_colliding = false
 		self.point_value = 0
+		
+	if area.is_in_group("good_area") and self.hit_state == State.MISS:
+		Stats.miss_count += 1
+		Stats.combo = 0

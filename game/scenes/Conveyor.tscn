@@ -15,7 +15,7 @@ scale = Vector2( 0.220274, 0.333378 )
 texture = ExtResource( 1 )
 
 [node name="Bar" parent="." instance=ExtResource( 3 )]
-position = Vector2( 0, -170.012 )
+position = Vector2( 0, -169.027 )
 
 [node name="NoteButtonD" parent="." instance=ExtResource( 2 )]
 position = Vector2( -58.3898, 165.938 )

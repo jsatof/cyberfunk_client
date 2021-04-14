@@ -20,8 +20,8 @@ func _process(delta):
 
 func setup(game_scene):
 	scroll_speed = game_scene.scroll_speed
-	bar_length = game_scene.bar_length
-	bar_despawn_point = bar_length + 150 # length plus some padding
+	bar_length = SongInfo.bar_length
+	bar_despawn_point = 2 * bar_length # length plus some padding
 	current_position = Vector2(0, -bar_length)
 	initial_bar_spawn()
 
@@ -32,7 +32,6 @@ func initial_bar_spawn():
 func spawn_bar():
 	var bar = bar_scene.instance()
 	bar.position = Vector2(0, current_position.y)
-	#bar.note_scale = note_scale
 	bars.append(bar)
 	bars_node.add_child(bar)
 	current_position += Vector2(0, -bar_length)

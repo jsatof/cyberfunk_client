@@ -35,14 +35,16 @@ scale = Vector2( 0.271577, 0.302486 )
 frames = SubResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -0.817579, 0 )
+position = Vector2( 0, 2.58244 )
 shape = SubResource( 4 )
 
 [node name="Timer" type="Timer" parent="."]
 
 [node name="Node2D" type="Node2D" parent="."]
+visible = false
 
 [node name="Label" type="Label" parent="Node2D"]
+visible = false
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
