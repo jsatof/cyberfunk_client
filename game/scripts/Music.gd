@@ -7,7 +7,7 @@ var is_started
 var pre_start_duration
 var start_pos_sec
 
-var pre_start_pad = 40
+var pre_start_pad = 0.63
 
 func _ready():
 	pass
@@ -23,7 +23,7 @@ func setup(gameplay_node):
 	audio_player.stream = gameplay_node.audio_file
 	speed = gameplay_node.scroll_speed
 	is_started = false
-	pre_start_duration = gameplay_node.bar_length + pre_start_pad
+	pre_start_duration = SongInfo.bar_length * pre_start_pad
 	start_pos_sec  = gameplay_node.start_pos_sec
 
 func start():

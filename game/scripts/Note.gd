@@ -5,7 +5,6 @@ export(int, 1, 4) var lane
 enum State { PERFECT, GREAT, GOOD, MISS }
 
 var y_pos = 0
-var bar_padding = 25
 
 var is_colliding = false
 var is_collected = false
@@ -35,7 +34,7 @@ func set_spawn_position():
 		4:
 			x = 50
 	
-	self.position = Vector2(x, -self.y_pos - self.bar_padding)
+	self.position = Vector2(x, -self.y_pos)
 
 func _process(delta):
 	collect()
@@ -56,6 +55,8 @@ func collect():
 						Stats.great_count += 1
 					State.GOOD:
 						Stats.good_count += 1
+				
+				
 				
 				self.hide()
 
