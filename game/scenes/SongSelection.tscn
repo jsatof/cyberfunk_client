@@ -1,37 +1,153 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=15 format=2]
 
-[ext_resource path="res://scripts/SongSelection.gd" type="Script" id=1]
+[ext_resource path="res://scripts/BackButton.gd" type="Script" id=1]
+[ext_resource path="res://scripts/GoButton.gd" type="Script" id=2]
+[ext_resource path="res://scripts/SongButton.gd" type="Script" id=3]
+[ext_resource path="res://assets/songselect_button.png" type="Texture" id=5]
+[ext_resource path="res://assets/song_select_background.png" type="Texture" id=6]
+[ext_resource path="res://assets/vaporwave_wallpaper.jpg" type="Texture" id=7]
+[ext_resource path="res://assets/Jura-Medium.otf" type="DynamicFontData" id=8]
+[ext_resource path="res://assets/Jura-Light.otf" type="DynamicFontData" id=9]
+[ext_resource path="res://assets/Cyberpunk.otf" type="DynamicFontData" id=10]
 
-[node name="SongSelection" type="Control"]
-anchor_right = 1.0
-anchor_bottom = 1.0
+[sub_resource type="DynamicFont" id=2]
+size = 13
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 8 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 11
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+use_mipmaps = true
+font_data = ExtResource( 9 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 28
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 10 )
+
+[sub_resource type="DynamicFont" id=7]
+size = 34
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 10 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 37
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 10 )
+
+[node name="Control" type="Control"]
+margin_right = 646.0
+margin_bottom = 363.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+margin_right = 642.0
+margin_bottom = 360.0
+texture = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 320.457, 177.134 )
+scale = Vector2( 0.167577, 0.132331 )
+texture = ExtResource( 7 )
+
+[node name="SongButton" type="TextureButton" parent="."]
+margin_left = 457.671
+margin_top = 163.181
+margin_right = 641.671
+margin_bottom = 189.181
+toggle_mode = true
+texture_normal = ExtResource( 5 )
+expand = true
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="SongButton"]
+margin_left = 77.7839
+margin_top = -0.118927
+margin_right = 155.784
+margin_bottom = 16.8811
+custom_fonts/font = SubResource( 2 )
+text = "In My Bed"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="SongButton"]
+margin_left = 79.4598
+margin_top = 13.773
+margin_right = 132.46
+margin_bottom = 27.773
+custom_fonts/font = SubResource( 3 )
+text = "Pure Indigo"
+
+[node name="BackButton" type="TextureButton" parent="."]
+margin_left = 7.68628
+margin_top = 330.172
+margin_right = 116.686
+margin_bottom = 366.172
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Button" type="Button" parent="."]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -87.4306
-margin_top = -6.99323
-margin_right = 81.5694
-margin_bottom = 13.0068
-text = "Proceed"
+[node name="BackLabel" type="Label" parent="BackButton"]
+margin_top = -5.66968
+margin_right = 98.0
+margin_bottom = 26.3303
+custom_fonts/font = SubResource( 6 )
+custom_colors/font_color = Color( 0.854902, 0.0470588, 0.803922, 1 )
+text = "Back"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GoButton" type="TextureButton" parent="."]
+margin_left = 530.0
+margin_top = 335.0
+margin_right = 642.0
+margin_bottom = 364.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GOLabel" type="Label" parent="GoButton"]
+margin_left = 23.3085
+margin_top = -15.119
+margin_right = 83.3085
+margin_bottom = 19.881
+custom_fonts/font = SubResource( 7 )
+custom_colors/font_color = Color( 0.854902, 0.0470588, 0.803922, 1 )
+text = "GO"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Label" type="Label" parent="."]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -42.7289
-margin_top = -51.0339
-margin_right = 50.2711
-margin_bottom = -30.0339
+margin_left = 8.18948
+margin_top = -6.92957
+margin_right = 353.189
+margin_bottom = 42.0704
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color = Color( 0.854902, 0.0470588, 0.803922, 1 )
 text = "Song Selection"
-[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="SongButton" to="SongButton" method="_on_SongButton_pressed"]
+[connection signal="toggled" from="SongButton" to="SongButton" method="_on_SongButton_toggled"]
+[connection signal="pressed" from="BackButton" to="BackButton" method="_on_BackButton_pressed"]
+[connection signal="pressed" from="GoButton" to="GoButton" method="_on_GoButton_pressed"]
