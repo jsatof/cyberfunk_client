@@ -7,7 +7,6 @@ var bar_length = 200
 var audio_file
 var tempo
 var quarter_note_sec
-var note_scale
 var start_pos_sec
 var scroll_speed #= 75
 
@@ -18,11 +17,7 @@ func _ready():
 	tempo = 100 # The song is 100 BPM
 	quarter_note_sec = 60.0 / float(tempo) # 60 BPM = 1 Beat per Second
 	scroll_speed = bar_length / float(4 * quarter_note_sec)
-	note_scale = bar_length / float(4 * 400)
 	start_pos_sec = 0.1
 	
 	music_node.setup(self)
 	conveyor_node.setup(self)
-	
-	
-	pass

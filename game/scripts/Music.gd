@@ -7,7 +7,7 @@ var is_started
 var pre_start_duration
 var start_pos_sec
 
-var pre_start_pad = 50
+var pre_start_pad = 40
 
 func _ready():
 	pass

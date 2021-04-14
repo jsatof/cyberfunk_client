@@ -32,7 +32,7 @@ func initial_bar_spawn():
 func spawn_bar():
 	var bar = bar_scene.instance()
 	bar.position = Vector2(0, current_position.y)
-	#bar.note_scale = note_scale
+
 	bars.append(bar)
 	bars_node.add_child(bar)
 	current_position += Vector2(0, -bar_length)
