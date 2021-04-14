@@ -22,6 +22,7 @@ config/icon="res://icon.png"
 [autoload]
 
 Stats="*res://scenes/Stats.tscn"
+SongInfo="*res://scripts/SongInfo.gd"
 
 [display]
 
