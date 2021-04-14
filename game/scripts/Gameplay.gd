@@ -20,3 +20,12 @@ func _ready():
 	
 	music_node.setup(self)
 	conveyor_node.setup(self)
+
+func _process(delta):
+	$StatsRect/ScoreValueLabel.text = str(Stats.score)
+	$StatsRect/ComboValueLabel.text = str(Stats.combo)
+	
+	$Counters/PerfectCountLabel.text = str(Stats.perfect_count)
+	$Counters/GreatCountLabel.text = str(Stats.great_count)
+	$Counters/GoodCountLabel.text = str(Stats.good_count)
+	$Counters/MissCountLabel.text = str(Stats.miss_count)
