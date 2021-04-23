@@ -1,7 +1,7 @@
 [gd_scene load_steps=21 format=2]
 
-[ext_resource path="res://assets/vaporwavesun.jpg" type="Texture" id=1]
-[ext_resource path="res://assets/Cyberpunk.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://assets/vaporwave_wallpaper.jpg" type="Texture" id=1]
+[ext_resource path="res://assets/Cyberpunk.otf" type="DynamicFontData" id=2]
 [ext_resource path="res://scripts/EndScreen.gd" type="Script" id=3]
 [ext_resource path="res://assets/Jura-Medium.otf" type="DynamicFontData" id=4]
 [ext_resource path="res://assets/Jura-DemiBold.otf" type="DynamicFontData" id=5]
@@ -55,23 +55,21 @@ outline_size = 1
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 2 )
 
-[node name="Node2D" type="Node2D"]
-
-[node name="Control" type="Control" parent="."]
-margin_right = 40.0
-margin_bottom = 40.0
+[node name="Control" type="Control"]
+margin_right = 641.0
+margin_bottom = 363.0
 script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Sprite" type="Sprite" parent="Control"]
-position = Vector2( 119.604, 252.771 )
-scale = Vector2( 0.895234, 0.905592 )
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 282.781, 194.01 )
+scale = Vector2( 0.16754, 0.168577 )
 texture = ExtResource( 1 )
 offset = Vector2( 223.209, -80.2372 )
 
-[node name="Good Game" type="Label" parent="Control"]
+[node name="Good Game" type="Label" parent="."]
 margin_left = 190.703
 margin_top = -2.11893
 margin_right = 448.703
@@ -83,7 +81,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Score" type="Label" parent="Control"]
+[node name="Score" type="Label" parent="."]
 margin_left = 62.5083
 margin_top = 107.006
 margin_right = 102.508
@@ -91,7 +89,7 @@ margin_bottom = 121.006
 custom_fonts/font = SubResource( 2 )
 text = "Score:"
 
-[node name="ScoreVariable" type="Label" parent="Control"]
+[node name="ScoreVariable" type="Label" parent="."]
 margin_left = 63.9803
 margin_top = 125.143
 margin_right = 103.98
@@ -101,7 +99,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Combo" type="Label" parent="Control"]
+[node name="Combo" type="Label" parent="."]
 margin_left = 146.151
 margin_top = 107.093
 margin_right = 204.151
@@ -110,7 +108,7 @@ custom_fonts/font = SubResource( 4 )
 text = "Combo:
 "
 
-[node name="ComboVariable" type="Label" parent="Control"]
+[node name="ComboVariable" type="Label" parent="."]
 margin_left = 147.411
 margin_top = 124.874
 margin_right = 187.411
@@ -120,7 +118,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Perfects" type="Label" parent="Control"]
+[node name="Perfects" type="Label" parent="."]
 margin_left = 418.294
 margin_top = 105.833
 margin_right = 488.294
@@ -128,7 +126,7 @@ margin_bottom = 123.833
 custom_fonts/font = SubResource( 6 )
 text = "Perfects:"
 
-[node name="PerfectVariable" type="Label" parent="Control"]
+[node name="PerfectVariable" type="Label" parent="."]
 margin_left = 435.579
 margin_top = 122.142
 margin_right = 475.579
@@ -138,7 +136,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Greats" type="Label" parent="Control"]
+[node name="Greats" type="Label" parent="."]
 margin_left = 517.828
 margin_top = 105.833
 margin_right = 563.828
@@ -146,7 +144,7 @@ margin_bottom = 119.833
 custom_fonts/font = SubResource( 8 )
 text = "Greats:"
 
-[node name="GreatVariable" type="Label" parent="Control"]
+[node name="GreatVariable" type="Label" parent="."]
 margin_left = 522.655
 margin_top = 123.331
 margin_right = 562.655
@@ -156,7 +154,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Goods" type="Label" parent="Control"]
+[node name="Goods" type="Label" parent="."]
 margin_left = 427.113
 margin_top = 161.27
 margin_right = 481.113
@@ -164,7 +162,7 @@ margin_bottom = 179.27
 custom_fonts/font = SubResource( 10 )
 text = "Goods:"
 
-[node name="GoodVariable" type="Label" parent="Control"]
+[node name="GoodVariable" type="Label" parent="."]
 margin_left = 435.791
 margin_top = 178.697
 margin_right = 475.791
@@ -174,7 +172,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Misses" type="Label" parent="Control"]
+[node name="Misses" type="Label" parent="."]
 margin_left = 516.568
 margin_top = 161.27
 margin_right = 574.568
@@ -182,7 +180,7 @@ margin_bottom = 179.27
 custom_fonts/font = SubResource( 12 )
 text = "Misses:"
 
-[node name="MissVariable" type="Label" parent="Control"]
+[node name="MissVariable" type="Label" parent="."]
 margin_left = 522.655
 margin_top = 178.838
 margin_right = 562.655
@@ -192,7 +190,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="TextureButton" type="TextureButton" parent="Control"]
+[node name="TextureButton" type="TextureButton" parent="."]
 margin_left = 181.678
 margin_top = 318.568
 margin_right = 461.678
@@ -202,7 +200,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="Control/TextureButton"]
+[node name="Label" type="Label" parent="TextureButton"]
 margin_left = 22.595
 margin_top = 2.37839
 margin_right = 254.595
@@ -210,4 +208,4 @@ margin_bottom = 32.3784
 custom_fonts/font = SubResource( 14 )
 custom_colors/font_color = Color( 0.854902, 0.0470588, 0.803922, 1 )
 text = "Song Selection"
-[connection signal="pressed" from="Control/TextureButton" to="Control/TextureButton" method="_on_TextureButton_pressed"]
+[connection signal="pressed" from="TextureButton" to="TextureButton" method="_on_TextureButton_pressed"]
