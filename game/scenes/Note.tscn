@@ -1,0 +1,61 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://assets/notes_sheet.png" type="Texture" id=1]
+[ext_resource path="res://scripts/Note.gd" type="Script" id=2]
+
+[sub_resource type="AtlasTexture" id=1]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 100, 80 )
+
+[sub_resource type="AtlasTexture" id=2]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 100, 0, 100, 80 )
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ SubResource( 1 ), SubResource( 2 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 3.43755, 3.17131 )
+
+[node name="Note" type="Area2D" groups=[
+"note",
+]]
+script = ExtResource( 2 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( -0.00695897, 0 )
+scale = Vector2( 0.271577, 0.302486 )
+frames = SubResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, 2.58244 )
+shape = SubResource( 4 )
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="Node2D" type="Node2D" parent="."]
+visible = false
+
+[node name="Label" type="Label" parent="Node2D"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -12.0
+margin_top = -7.0
+margin_right = 12.0
+margin_bottom = 7.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="area_entered" from="." to="." method="_on_Note_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_Note_area_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
