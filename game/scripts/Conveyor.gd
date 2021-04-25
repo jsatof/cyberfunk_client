@@ -6,7 +6,7 @@ var bar_scene = preload("res://scenes/Bar.tscn")
 var bars = []
 
 var current_position
-var bar_despawn_point 
+var bar_despawn_point
 var scroll_speed
 
 func _ready():
@@ -38,3 +38,6 @@ func spawn_bar():
 func despawn_bar(bar):
 	bar.queue_free()
 	bars.erase(bar)
+
+func spawn_empty_bar():
+	pass

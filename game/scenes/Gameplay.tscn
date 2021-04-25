@@ -243,3 +243,4 @@ margin_top = 99.2995
 margin_right = 40.0
 margin_bottom = 113.3
 text = "0"
+[connection signal="song_end" from="Music" to="." method="_on_Music_song_end"]

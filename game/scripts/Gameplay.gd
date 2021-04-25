@@ -26,3 +26,8 @@ func _process(delta):
 	$Counters/GreatCountLabel.text = str(Stats.great_count)
 	$Counters/GoodCountLabel.text = str(Stats.good_count)
 	$Counters/MissCountLabel.text = str(Stats.miss_count)
+
+
+func _on_Music_song_end():
+	get_tree().change_scene("res://scenes/EndScreen.tscn")
+	pass # Replace with function body.
