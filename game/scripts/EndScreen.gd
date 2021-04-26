@@ -1,7 +1,8 @@
 extends Control
 
 onready var http_request = HTTPRequest.new()
-var grade
+var grade = ""
+var username = ""
 
 func _ready():
 	$ScoreVariable.text = str(Stats.score)
@@ -14,19 +15,19 @@ func _ready():
 	$AccuracyVariable.text = str(Stats.accuracy)
 
 	var font_color = Color(0,0,0)
-	if Stats.accuracy == 1.0:
+	if Stats.accuracy == 100:
 		grade = "S"
 		font_color = Color(245, 226, 22) # gold
-	elif Stats.accuracy < 1 and Stats.accuracy >= 0.9:
+	elif Stats.accuracy < 100 and Stats.accuracy >= 90:
 		grade = "A"
 		font_color = Color(21, 230, 45) # green
-	elif Stats.accuracy < 0.9 and Stats.accuracy >= 0.8:
+	elif Stats.accuracy < 90 and Stats.accuracy >= 80:
 		grade = "B"
 		font_color = Color(17, 84, 209) # blue
-	elif Stats.accuracy < 0.8 and Stats.accuracy >= 0.7:
+	elif Stats.accuracy < 80 and Stats.accuracy >= 70:
 		grade = "C"
 		font_color = Color(209, 103, 17) # orange
-	elif Stats.accuracy < 0.7:
+	elif Stats.accuracy < 70:
 		grade = "D"
 		font_color = Color(209, 17, 17) # red
 
@@ -42,8 +43,11 @@ func upload_score():
 	var headers = ["Content-Type: application/json"]
 	var use_ssl = false
 	
+	username = Stats.username
+	assert(username != "")
+	
 	var body = {
-		"username": "anon",
+		"username": username,
 		"score": Stats.score,
 		"accuracy": Stats.accuracy,
 		"max_combo": Stats.max_combo,

@@ -279,4 +279,7 @@ margin_top = 183.281
 margin_right = 103.304
 margin_bottom = 204.281
 custom_fonts/font = SubResource( 19 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="pressed" from="TextureButton" to="TextureButton" method="_on_TextureButton_pressed"]

@@ -29,5 +29,5 @@ func _process(delta):
 
 
 func _on_Music_song_end():
-	get_tree().change_scene("res://scenes/EndScreen.tscn")
+	get_tree().change_scene("res://scenes/AskName.tscn")
 	pass # Replace with function body.

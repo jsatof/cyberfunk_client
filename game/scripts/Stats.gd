@@ -14,6 +14,8 @@ var max_combo = 0
 var total_notes = 0
 var accuracy = 0.0
 
+var username = ""
+
 func _process(delta):
 	if combo >= max_combo:
 		max_combo = combo
@@ -21,6 +23,6 @@ func _process(delta):
 	total_notes = perfect_count + great_count + good_count + miss_count
 	
 	if total_notes <= 0:
-		accuracy = float((perfect_count + great_count + good_count) / 1.0)
+		accuracy = 100.0 * float((perfect_count + great_count + good_count) / 1.0)
 	else:
-		accuracy = float((perfect_count + great_count + good_count) / float(total_notes))
+		accuracy = 100.0 * stepify((perfect_count + great_count + good_count) / float(total_notes), 0.01)
