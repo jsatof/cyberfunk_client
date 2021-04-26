@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://assets/vaporwave_wallpaper.jpg" type="Texture" id=1]
 [ext_resource path="res://assets/Cyberpunk.otf" type="DynamicFontData" id=2]
@@ -61,6 +61,18 @@ font_data = ExtResource( 7 )
 
 [sub_resource type="DynamicFont" id=16]
 font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=17]
+size = 128
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=18]
+font_data = ExtResource( 7 )
+
+[sub_resource type="DynamicFont" id=19]
+font_data = ExtResource( 7 )
 
 [node name="Control" type="Control"]
 margin_right = 641.0
@@ -233,4 +245,38 @@ margin_top = 186.0
 margin_right = 210.0
 margin_bottom = 216.0
 custom_fonts/font = SubResource( 16 )
+
+[node name="GradeLabel" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -70.6359
+margin_top = -71.3118
+margin_right = 69.3641
+margin_bottom = 61.6882
+custom_fonts/font = SubResource( 17 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "S"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AccuracyLabel" type="Label" parent="."]
+margin_left = 33.9795
+margin_top = 165.178
+margin_right = 108.979
+margin_bottom = 183.178
+custom_fonts/font = SubResource( 18 )
+text = "Accuracy:"
+
+[node name="AccuracyVariable" type="Label" parent="."]
+margin_left = 46.3036
+margin_top = 183.281
+margin_right = 103.304
+margin_bottom = 204.281
+custom_fonts/font = SubResource( 19 )
 [connection signal="pressed" from="TextureButton" to="TextureButton" method="_on_TextureButton_pressed"]
