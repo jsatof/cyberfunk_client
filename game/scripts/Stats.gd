@@ -10,3 +10,8 @@ var perfect_count = 0
 var great_count = 0
 var good_count = 0
 var miss_count = 0
+var max_combo = 0
+
+func _process(delta):
+	if combo >= max_combo:
+		max_combo = combo
