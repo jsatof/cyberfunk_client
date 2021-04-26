@@ -38,7 +38,7 @@ func _ready():
 	upload_score()
 
 func upload_score():
-	var url = "http://127.0.0.1:5000/submit_score"
+	var url = "http://ec2-3-140-247-200.us-east-2.compute.amazonaws.com/submit_score"
 	var headers = ["Content-Type: application/json"]
 	var use_ssl = false
 	
