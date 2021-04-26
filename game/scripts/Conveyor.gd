@@ -5,11 +5,14 @@ onready var bars_node = $Bar
 var bar_scene = preload("res://scenes/Bar.tscn")
 var bars = []
 
-var bar_length
 var current_position
-var bar_despawn_point 
+var bar_despawn_point
 var scroll_speed
 
+func _ready():
+	bar_despawn_point = 2 * SongInfo.bar_length # length plus some padding
+	current_position = Vector2(0, -SongInfo.bar_length)
+	
 func _process(delta):
 	bars_node.position += Vector2(0, scroll_speed) * delta
 
@@ -18,12 +21,8 @@ func _process(delta):
 			despawn_bar(bar)
 			spawn_bar()
 
-func setup(game_scene):
-	scroll_speed = game_scene.scroll_speed
-	bar_length = SongInfo.bar_length
-	bar_despawn_point = 2 * bar_length # length plus some padding
-	current_position = Vector2(0, -bar_length)
-	initial_bar_spawn()
+func set_scroll_speed(rate):
+	scroll_speed = rate
 
 func initial_bar_spawn():
 	for i in range(4):
@@ -34,8 +33,11 @@ func spawn_bar():
 	bar.position = Vector2(0, current_position.y)
 	bars.append(bar)
 	bars_node.add_child(bar)
-	current_position += Vector2(0, -bar_length)
+	current_position += Vector2(0, -SongInfo.bar_length)
 
 func despawn_bar(bar):
 	bar.queue_free()
 	bars.erase(bar)
+
+func spawn_empty_bar():
+	pass

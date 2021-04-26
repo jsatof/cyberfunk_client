@@ -51,17 +51,16 @@ func collect():
 				match self.hit_state:
 					State.PERFECT:
 						Stats.perfect_count += 1
-						Stats.score += 100 + (Stats.combo * 5)
 					State.GREAT:
 						Stats.great_count += 1
-						Stats.score += 50 + (Stats.combo * 5)
 					State.GOOD:
 						Stats.good_count += 1
-						Stats.score += 25 + (Stats.combo * 5)
 				
+				Stats.score += self.point_value + (Stats.combo * 5)
 				Stats.combo += 1
-				
 				self.hide()
+				
+				
 
 func _on_Note_area_entered(area):
 	if area.is_in_group("perfect_area"):
@@ -82,11 +81,11 @@ func _on_Note_area_entered(area):
 		self.point_value = 25
 		self.hit_state = State.GOOD
 		
-func _on_Note_area_exited(area):
-	if area.is_in_group("perfect_area") or area.is_in_group("great_area") or area.is_in_group("good_area"):
-		is_colliding = false
+	elif area.is_in_group("miss_area"):
+		note_button = area.get_parent()
 		self.point_value = 0
+		self.hit_state = State.MISS
 		
-	if area.is_in_group("good_area") and self.hit_state == State.MISS:
-		Stats.miss_count += 1
-		Stats.combo = 0
+		if not self.is_collected:
+			Stats.combo = 0
+			Stats.miss_count += 1

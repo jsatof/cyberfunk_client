@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://assets/vaporwave_wallpaper.jpg" type="Texture" id=1]
 [ext_resource path="res://assets/Cyberpunk.otf" type="DynamicFontData" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://assets/Jura-Medium.otf" type="DynamicFontData" id=4]
 [ext_resource path="res://assets/Jura-DemiBold.otf" type="DynamicFontData" id=5]
 [ext_resource path="res://scripts/EndScreenButton.gd" type="Script" id=6]
+[ext_resource path="res://assets/Jura-Regular.otf" type="DynamicFontData" id=7]
 
 [sub_resource type="DynamicFont" id=1]
 size = 41
@@ -54,6 +55,12 @@ size = 25
 outline_size = 1
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=15]
+font_data = ExtResource( 7 )
+
+[sub_resource type="DynamicFont" id=16]
+font_data = ExtResource( 4 )
 
 [node name="Control" type="Control"]
 margin_right = 641.0
@@ -208,4 +215,22 @@ margin_bottom = 32.3784
 custom_fonts/font = SubResource( 14 )
 custom_colors/font_color = Color( 0.854902, 0.0470588, 0.803922, 1 )
 text = "Song Selection"
+
+[node name="MaxCombo" type="Label" parent="."]
+margin_left = 122.112
+margin_top = 166.312
+margin_right = 201.112
+margin_bottom = 180.312
+custom_fonts/font = SubResource( 15 )
+text = "Max Combo:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MaxComboVariable" type="Label" parent="."]
+margin_left = 122.0
+margin_top = 186.0
+margin_right = 210.0
+margin_bottom = 216.0
+custom_fonts/font = SubResource( 16 )
 [connection signal="pressed" from="TextureButton" to="TextureButton" method="_on_TextureButton_pressed"]

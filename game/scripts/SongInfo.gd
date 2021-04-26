@@ -7,18 +7,15 @@ var tempo
 
 var bar_length = 400
 
+# STUB: handle variable song/beatmaps
+
 func _ready():
 	song_file = load("res://assets/Pure_Indigo_In_My_Bed.ogg")
-	map_file = "res://assets/in_my_bed_map.mboy"
-	song_map = load_songmap(map_file)
+	assert(song_file != null)
 	
-	tempo = song_map.tempo
-
-
-func load_songmap(path):
-	var file = File.new()
-	file.open(path, File.READ)
-	var content = file.get_as_text()
-	file.close()
-	return JSON.parse(content).get_result()
+	song_file.loop = false
+	
+	map_file = "res://assets/in_my_bed_map.mboy"
+	
+	tempo = 100
 
